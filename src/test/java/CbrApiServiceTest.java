@@ -5,6 +5,7 @@ import org.example.CbrApiService;
 
 import java.time.LocalDate;
 
+
 public class CbrApiServiceTest {
     @Test
     void cbrApiServiceClassCreationTest() {
@@ -52,5 +53,15 @@ public class CbrApiServiceTest {
         CbrApiService service = new CbrApiService();
         Assertions.assertEquals(0.168046,
                 service.getExchangeRate("KZT", LocalDate.of(2025, 4, 3)));
+    }
+    @Test
+    void getExchangeRateNonExistentCurrencyTest(){
+        String currency = "TTT";
+        CbrApiService service = new CbrApiService();
+        Exception exception = Assertions.assertThrows(Exception.class, () ->
+                service.getExchangeRate(currency, LocalDate.of(2025,4,4)));
+        String expectedMessage = "Валюта TTT не найдена";
+        String actualMessage = exception.getMessage();
+        Assertions.assertTrue(actualMessage.contains(expectedMessage));
     }
 }
