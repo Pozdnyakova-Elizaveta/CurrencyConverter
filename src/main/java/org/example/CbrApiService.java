@@ -13,6 +13,7 @@ public class CbrApiService {
         else if (date.equals(LocalDate.of(2025, 4, 4))) return XmlResponse.XML_RESPONSE_APRIL_4;
         else if (date.equals(LocalDate.of(2025, 4, 3))) return XmlResponse.XML_RESPONSE_APRIL_3;
         else if (date.equals(LocalDate.of(2025, 4, 2))) return XmlResponse.XML_RESPONSE_APRIL_2;
-        throw new IllegalArgumentException("getXmlResponseRateByDate() works only April 5, 4, 3, 2");
+        else if (date.equals(LocalDate.of(2025, 4, 1))) return XmlResponse.XML_RESPONSE_APRIL_1;
+        throw new IllegalArgumentException("getXmlResponseRateByDate() works only April 5, 4, 3, 2, 1");
     }
 }
