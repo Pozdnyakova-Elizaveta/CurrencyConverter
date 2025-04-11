@@ -17,4 +17,10 @@ public class CbrApiServiceTest {
         Assertions.assertEquals(XmlResponse.XML_RESPONSE_APRIL_5,
                 service.getXmlResponseRateByDate(LocalDate.of(2025, 4, 5)));
     }
+    @Test
+    void getXmlResponseRateByDateApril4Test(){
+        CbrApiService service = new CbrApiService();
+        Assertions.assertEquals(XmlResponse.XML_RESPONSE_APRIL_4,
+                service.getXmlResponseRateByDate(LocalDate.of(2025, 4, 4)));
+    }
 }
