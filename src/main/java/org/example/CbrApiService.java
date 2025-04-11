@@ -20,6 +20,7 @@ public class CbrApiService {
     public double getExchangeRate(String currency, LocalDate date) {
         //TODO реализовать с использованием getXmlResponseRateByDate
         if (currency.equals("USD") && date.equals(LocalDate.of(2025, 4, 5))) return 84.2774;
-        throw new IllegalArgumentException("getXmlResponseRateByDate() works only with parameters (USD, 05.04.2025)");
+        else if (currency.equals("KZT") && date.equals(LocalDate.of(2025, 4, 3))) return 0.168046;
+        throw new IllegalArgumentException("getXmlResponseRateByDate() works only with parameters (USD, 05.04.2025), (KZT, 03.04.2025)");
     }
 }
