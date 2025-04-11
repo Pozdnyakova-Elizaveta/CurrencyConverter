@@ -1,6 +1,353 @@
 package org.example;
 
 public class XmlResponse {
+    public static final String XML_RESPONSE_APRIL_2 = "<?xml version=\"1.0\" encoding=\"windows-1251\"?>\n" +
+            "<ValCurs Date=\"02.04.2025\" name=\"Foreign Currency Market\">\n" +
+            "    <Valute ID=\"R01010\">\n" +
+            "        <NumCode>036</NumCode>\n" +
+            "        <CharCode>AUD</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Австралийский доллар</Name>\n" +
+            "        <Value>53,2054</Value>\n" +
+            "        <VunitRate>53,2054</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01020A\">\n" +
+            "        <NumCode>944</NumCode>\n" +
+            "        <CharCode>AZN</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Азербайджанский манат</Name>\n" +
+            "        <Value>49,9239</Value>\n" +
+            "        <VunitRate>49,9239</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01035\">\n" +
+            "        <NumCode>826</NumCode>\n" +
+            "        <CharCode>GBP</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Фунт стерлингов</Name>\n" +
+            "        <Value>109,5681</Value>\n" +
+            "        <VunitRate>109,5681</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01060\">\n" +
+            "        <NumCode>051</NumCode>\n" +
+            "        <CharCode>AMD</CharCode>\n" +
+            "        <Nominal>100</Nominal>\n" +
+            "        <Name>Армянских драмов</Name>\n" +
+            "        <Value>21,7005</Value>\n" +
+            "        <VunitRate>0,217005</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01090B\">\n" +
+            "        <NumCode>933</NumCode>\n" +
+            "        <CharCode>BYN</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Белорусский рубль</Name>\n" +
+            "        <Value>27,1040</Value>\n" +
+            "        <VunitRate>27,104</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01100\">\n" +
+            "        <NumCode>975</NumCode>\n" +
+            "        <CharCode>BGN</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Болгарский лев</Name>\n" +
+            "        <Value>46,9303</Value>\n" +
+            "        <VunitRate>46,9303</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01115\">\n" +
+            "        <NumCode>986</NumCode>\n" +
+            "        <CharCode>BRL</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Бразильский реал</Name>\n" +
+            "        <Value>14,7809</Value>\n" +
+            "        <VunitRate>14,7809</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01135\">\n" +
+            "        <NumCode>348</NumCode>\n" +
+            "        <CharCode>HUF</CharCode>\n" +
+            "        <Nominal>100</Nominal>\n" +
+            "        <Name>Форинтов</Name>\n" +
+            "        <Value>22,7884</Value>\n" +
+            "        <VunitRate>0,227884</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01150\">\n" +
+            "        <NumCode>704</NumCode>\n" +
+            "        <CharCode>VND</CharCode>\n" +
+            "        <Nominal>10000</Nominal>\n" +
+            "        <Name>Донгов</Name>\n" +
+            "        <Value>34,1738</Value>\n" +
+            "        <VunitRate>0,00341738</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01200\">\n" +
+            "        <NumCode>344</NumCode>\n" +
+            "        <CharCode>HKD</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Гонконгский доллар</Name>\n" +
+            "        <Value>10,9271</Value>\n" +
+            "        <VunitRate>10,9271</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01210\">\n" +
+            "        <NumCode>981</NumCode>\n" +
+            "        <CharCode>GEL</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Лари</Name>\n" +
+            "        <Value>30,6969</Value>\n" +
+            "        <VunitRate>30,6969</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01215\">\n" +
+            "        <NumCode>208</NumCode>\n" +
+            "        <CharCode>DKK</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Датская крона</Name>\n" +
+            "        <Value>12,3019</Value>\n" +
+            "        <VunitRate>12,3019</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01230\">\n" +
+            "        <NumCode>784</NumCode>\n" +
+            "        <CharCode>AED</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Дирхам ОАЭ</Name>\n" +
+            "        <Value>23,1098</Value>\n" +
+            "        <VunitRate>23,1098</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01235\">\n" +
+            "        <NumCode>840</NumCode>\n" +
+            "        <CharCode>USD</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Доллар США</Name>\n" +
+            "        <Value>84,8707</Value>\n" +
+            "        <VunitRate>84,8707</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01239\">\n" +
+            "        <NumCode>978</NumCode>\n" +
+            "        <CharCode>EUR</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Евро</Name>\n" +
+            "        <Value>91,9643</Value>\n" +
+            "        <VunitRate>91,9643</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01240\">\n" +
+            "        <NumCode>818</NumCode>\n" +
+            "        <CharCode>EGP</CharCode>\n" +
+            "        <Nominal>10</Nominal>\n" +
+            "        <Name>Египетских фунтов</Name>\n" +
+            "        <Value>16,7780</Value>\n" +
+            "        <VunitRate>1,6778</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01270\">\n" +
+            "        <NumCode>356</NumCode>\n" +
+            "        <CharCode>INR</CharCode>\n" +
+            "        <Nominal>100</Nominal>\n" +
+            "        <Name>Индийских рупий</Name>\n" +
+            "        <Value>99,1696</Value>\n" +
+            "        <VunitRate>0,991696</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01280\">\n" +
+            "        <NumCode>360</NumCode>\n" +
+            "        <CharCode>IDR</CharCode>\n" +
+            "        <Nominal>10000</Nominal>\n" +
+            "        <Name>Рупий</Name>\n" +
+            "        <Value>51,1639</Value>\n" +
+            "        <VunitRate>0,00511639</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01335\">\n" +
+            "        <NumCode>398</NumCode>\n" +
+            "        <CharCode>KZT</CharCode>\n" +
+            "        <Nominal>100</Nominal>\n" +
+            "        <Name>Тенге</Name>\n" +
+            "        <Value>16,8247</Value>\n" +
+            "        <VunitRate>0,168247</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01350\">\n" +
+            "        <NumCode>124</NumCode>\n" +
+            "        <CharCode>CAD</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Канадский доллар</Name>\n" +
+            "        <Value>59,0364</Value>\n" +
+            "        <VunitRate>59,0364</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01355\">\n" +
+            "        <NumCode>634</NumCode>\n" +
+            "        <CharCode>QAR</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Катарский риал</Name>\n" +
+            "        <Value>23,3161</Value>\n" +
+            "        <VunitRate>23,3161</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01370\">\n" +
+            "        <NumCode>417</NumCode>\n" +
+            "        <CharCode>KGS</CharCode>\n" +
+            "        <Nominal>100</Nominal>\n" +
+            "        <Name>Сомов</Name>\n" +
+            "        <Value>97,9316</Value>\n" +
+            "        <VunitRate>0,979316</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01375\">\n" +
+            "        <NumCode>156</NumCode>\n" +
+            "        <CharCode>CNY</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Юань</Name>\n" +
+            "        <Value>11,6029</Value>\n" +
+            "        <VunitRate>11,6029</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01500\">\n" +
+            "        <NumCode>498</NumCode>\n" +
+            "        <CharCode>MDL</CharCode>\n" +
+            "        <Nominal>10</Nominal>\n" +
+            "        <Name>Молдавских леев</Name>\n" +
+            "        <Value>47,3041</Value>\n" +
+            "        <VunitRate>4,73041</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01530\">\n" +
+            "        <NumCode>554</NumCode>\n" +
+            "        <CharCode>NZD</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Новозеландский доллар</Name>\n" +
+            "        <Value>48,1302</Value>\n" +
+            "        <VunitRate>48,1302</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01535\">\n" +
+            "        <NumCode>578</NumCode>\n" +
+            "        <CharCode>NOK</CharCode>\n" +
+            "        <Nominal>10</Nominal>\n" +
+            "        <Name>Норвежских крон</Name>\n" +
+            "        <Value>80,4241</Value>\n" +
+            "        <VunitRate>8,04241</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01565\">\n" +
+            "        <NumCode>985</NumCode>\n" +
+            "        <CharCode>PLN</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Злотый</Name>\n" +
+            "        <Value>21,9554</Value>\n" +
+            "        <VunitRate>21,9554</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01585F\">\n" +
+            "        <NumCode>946</NumCode>\n" +
+            "        <CharCode>RON</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Румынский лей</Name>\n" +
+            "        <Value>18,4510</Value>\n" +
+            "        <VunitRate>18,451</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01589\">\n" +
+            "        <NumCode>960</NumCode>\n" +
+            "        <CharCode>XDR</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>СДР (специальные права заимствования)</Name>\n" +
+            "        <Value>112,7677</Value>\n" +
+            "        <VunitRate>112,7677</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01625\">\n" +
+            "        <NumCode>702</NumCode>\n" +
+            "        <CharCode>SGD</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Сингапурский доллар</Name>\n" +
+            "        <Value>63,2090</Value>\n" +
+            "        <VunitRate>63,209</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01670\">\n" +
+            "        <NumCode>972</NumCode>\n" +
+            "        <CharCode>TJS</CharCode>\n" +
+            "        <Nominal>10</Nominal>\n" +
+            "        <Name>Сомони</Name>\n" +
+            "        <Value>77,8330</Value>\n" +
+            "        <VunitRate>7,7833</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01675\">\n" +
+            "        <NumCode>764</NumCode>\n" +
+            "        <CharCode>THB</CharCode>\n" +
+            "        <Nominal>10</Nominal>\n" +
+            "        <Name>Батов</Name>\n" +
+            "        <Value>24,9136</Value>\n" +
+            "        <VunitRate>2,49136</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01700J\">\n" +
+            "        <NumCode>949</NumCode>\n" +
+            "        <CharCode>TRY</CharCode>\n" +
+            "        <Nominal>10</Nominal>\n" +
+            "        <Name>Турецких лир</Name>\n" +
+            "        <Value>22,4528</Value>\n" +
+            "        <VunitRate>2,24528</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01710A\">\n" +
+            "        <NumCode>934</NumCode>\n" +
+            "        <CharCode>TMT</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Новый туркменский манат</Name>\n" +
+            "        <Value>24,2488</Value>\n" +
+            "        <VunitRate>24,2488</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01717\">\n" +
+            "        <NumCode>860</NumCode>\n" +
+            "        <CharCode>UZS</CharCode>\n" +
+            "        <Nominal>10000</Nominal>\n" +
+            "        <Name>Узбекских сумов</Name>\n" +
+            "        <Value>65,6023</Value>\n" +
+            "        <VunitRate>0,00656023</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01720\">\n" +
+            "        <NumCode>980</NumCode>\n" +
+            "        <CharCode>UAH</CharCode>\n" +
+            "        <Nominal>10</Nominal>\n" +
+            "        <Name>Гривен</Name>\n" +
+            "        <Value>20,4889</Value>\n" +
+            "        <VunitRate>2,04889</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01760\">\n" +
+            "        <NumCode>203</NumCode>\n" +
+            "        <CharCode>CZK</CharCode>\n" +
+            "        <Nominal>10</Nominal>\n" +
+            "        <Name>Чешских крон</Name>\n" +
+            "        <Value>36,6675</Value>\n" +
+            "        <VunitRate>3,66675</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01770\">\n" +
+            "        <NumCode>752</NumCode>\n" +
+            "        <CharCode>SEK</CharCode>\n" +
+            "        <Nominal>10</Nominal>\n" +
+            "        <Name>Шведских крон</Name>\n" +
+            "        <Value>84,6047</Value>\n" +
+            "        <VunitRate>8,46047</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01775\">\n" +
+            "        <NumCode>756</NumCode>\n" +
+            "        <CharCode>CHF</CharCode>\n" +
+            "        <Nominal>1</Nominal>\n" +
+            "        <Name>Швейцарский франк</Name>\n" +
+            "        <Value>96,1599</Value>\n" +
+            "        <VunitRate>96,1599</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01805F\">\n" +
+            "        <NumCode>941</NumCode>\n" +
+            "        <CharCode>RSD</CharCode>\n" +
+            "        <Nominal>100</Nominal>\n" +
+            "        <Name>Сербских динаров</Name>\n" +
+            "        <Value>78,4044</Value>\n" +
+            "        <VunitRate>0,784044</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01810\">\n" +
+            "        <NumCode>710</NumCode>\n" +
+            "        <CharCode>ZAR</CharCode>\n" +
+            "        <Nominal>10</Nominal>\n" +
+            "        <Name>Рэндов</Name>\n" +
+            "        <Value>46,2075</Value>\n" +
+            "        <VunitRate>4,62075</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01815\">\n" +
+            "        <NumCode>410</NumCode>\n" +
+            "        <CharCode>KRW</CharCode>\n" +
+            "        <Nominal>1000</Nominal>\n" +
+            "        <Name>Вон</Name>\n" +
+            "        <Value>57,7116</Value>\n" +
+            "        <VunitRate>0,0577116</VunitRate>\n" +
+            "    </Valute>\n" +
+            "    <Valute ID=\"R01820\">\n" +
+            "        <NumCode>392</NumCode>\n" +
+            "        <CharCode>JPY</CharCode>\n" +
+            "        <Nominal>100</Nominal>\n" +
+            "        <Name>Иен</Name>\n" +
+            "        <Value>56,6560</Value>\n" +
+            "        <VunitRate>0,56656</VunitRate>\n" +
+            "    </Valute>\n" +
+            "</ValCurs>";
     public static final String XML_RESPONSE_APRIL_3 = "<?xml version=\"1.0\" encoding=\"windows-1251\"?>\n" +
             "<ValCurs Date=\"03.04.2025\" name=\"Foreign Currency Market\">\n" +
             "    <Valute ID=\"R01010\">\n" +
