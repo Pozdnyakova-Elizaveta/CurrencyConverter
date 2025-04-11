@@ -47,4 +47,10 @@ public class CbrApiServiceTest {
         Assertions.assertEquals(84.2774,
                 service.getExchangeRate("USD", LocalDate.of(2025, 4, 5)));
     }
+    @Test
+    void getExchangeRateKZTApril3Test(){
+        CbrApiService service = new CbrApiService();
+        Assertions.assertEquals(0.168046,
+                service.getExchangeRate("KZT", LocalDate.of(2025, 4, 3)));
+    }
 }
