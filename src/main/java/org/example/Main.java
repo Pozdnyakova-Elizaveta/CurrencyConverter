@@ -9,7 +9,7 @@ public class Main {
         CurrencyConverter currencyConverter = new CurrencyConverter();
         int number;
         do {
-            System.out.println("Введите 1 для перевода из одной валюты в другую, 2 - для завершения работы");
+            System.out.println("Введите 1 для перевода из одной валюты в другую, 2 - для предсказания курса валюты относительно рубля, 3 - для завершения работы");
             number = scanner.nextInt();
             if (number == 1){
                 System.out.println("Введите сумму:");
@@ -25,6 +25,24 @@ public class Main {
                     System.out.println(e.getMessage());
                 }
             }
-        } while(number!=2);
+            else if (number==2){
+                System.out.println("Введите интересующую валюту:");
+                String currency = scanner.next();
+                try {
+                    LocalDate today = LocalDate.now();
+                    double[] ratesPrediction = currencyConverter.currencyRatePrediction(currency, today);
+                    System.out.println("История курса: ");
+                    for (int i=0; i!= 5; i++){
+                        System.out.println(today.minusDays(5-i+1)+" - "+ String.format("%.4f", ratesPrediction[i]));
+                    }
+                    System.out.println("Предсказание курса: ");
+                    for (int i=5; i!= ratesPrediction.length; i++){
+                        System.out.println(today.plusDays(i-5)+" - "+ String.format("%.4f", ratesPrediction[i]));
+                    }
+                }catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
+            }
+        } while(number!=3);
     }
 }
