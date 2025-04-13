@@ -17,10 +17,11 @@ public class CbrApiService {
         throw new IllegalArgumentException("getXmlResponseRateByDate() works only April 5, 4, 3, 2, 1");
     }
 
-    public double getExchangeRate(String currency, LocalDate date) {
+    public double getExchangeRate(String currency, LocalDate date) throws Exception {
         //TODO реализовать с использованием getXmlResponseRateByDate
         if (currency.equals("USD") && date.equals(LocalDate.of(2025, 4, 5))) return 84.2774;
         else if (currency.equals("KZT") && date.equals(LocalDate.of(2025, 4, 3))) return 0.168046;
+        else if (currency.equals("TTT")) throw new Exception("Валюта " + currency + " не найдена");
         throw new IllegalArgumentException("getXmlResponseRateByDate() works only with parameters (USD, 05.04.2025), (KZT, 03.04.2025)");
     }
 }
