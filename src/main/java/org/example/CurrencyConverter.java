@@ -44,6 +44,13 @@ public class CurrencyConverter {
         return rates;
     }
 
+    /**
+     * Прогнозирование курса валюты на следующие пять дней по методу скользящего среднего
+     * @param currency код валюты
+     * @param date дата, относительно которой строится прогноз (последняя дата с известными данными)
+     * @return массив из 10 элементов, первые пять - известные данные, следующие 5 - прогнозируемые значения курса
+     * @throws Exception ошибки в работе с xml
+     */
     public double[] currencyRatePrediction(String currency, LocalDate date) throws Exception {
         double[] rates = getHistoryRate(currency, date);
         double[] ratesPrediction = Arrays.copyOf(rates, 10);
