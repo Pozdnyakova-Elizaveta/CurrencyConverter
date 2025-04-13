@@ -19,4 +19,11 @@ public class CurrencyConverterTest {
         String actualMessage = exception.getMessage();
         Assertions.assertTrue(actualMessage.contains(expectedMessage));
     }
+    @Test
+    void converting200RUBToUSDTest() {
+        CurrencyConverter converter = new CurrencyConverter();
+        double res = Assertions.assertDoesNotThrow(()->
+                converter.convert(200, "RUB", "USD", LocalDate.of(2025, 4, 5)));
+        Assertions.assertEquals(2.373115449693512, res);
+    }
 }
