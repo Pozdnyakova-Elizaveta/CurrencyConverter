@@ -15,32 +15,32 @@ public class CbrApiServiceTest {
     @Test
     void getXmlResponseRateByDateApril5Test(){
         CbrApiService service = new CbrApiService();
-        Assertions.assertEquals(XmlResponse.XML_RESPONSE_APRIL_5,
-                service.getXmlResponseRateByDate(LocalDate.of(2025, 4, 5)));
+        String res = Assertions.assertDoesNotThrow(()->service.getXmlResponseRateByDate(LocalDate.of(2025, 4, 5)));
+        Assertions.assertEquals(XmlResponse.XML_RESPONSE_APRIL_5, res);
     }
     @Test
     void getXmlResponseRateByDateApril4Test(){
         CbrApiService service = new CbrApiService();
-        Assertions.assertEquals(XmlResponse.XML_RESPONSE_APRIL_4,
-                service.getXmlResponseRateByDate(LocalDate.of(2025, 4, 4)));
+        String res = Assertions.assertDoesNotThrow(()->service.getXmlResponseRateByDate(LocalDate.of(2025, 4, 4)));
+        Assertions.assertEquals(XmlResponse.XML_RESPONSE_APRIL_4, res);
     }
     @Test
     void getXmlResponseRateByDateApril3Test(){
         CbrApiService service = new CbrApiService();
-        Assertions.assertEquals(XmlResponse.XML_RESPONSE_APRIL_3,
-                service.getXmlResponseRateByDate(LocalDate.of(2025, 4, 3)));
+        String res = Assertions.assertDoesNotThrow(()->service.getXmlResponseRateByDate(LocalDate.of(2025, 4, 3)));
+        Assertions.assertEquals(XmlResponse.XML_RESPONSE_APRIL_3, res);
     }
     @Test
     void getXmlResponseRateByDateApril2Test(){
         CbrApiService service = new CbrApiService();
-        Assertions.assertEquals(XmlResponse.XML_RESPONSE_APRIL_2,
-                service.getXmlResponseRateByDate(LocalDate.of(2025, 4, 2)));
+        String res = Assertions.assertDoesNotThrow(()->service.getXmlResponseRateByDate(LocalDate.of(2025, 4, 2)));
+        Assertions.assertEquals(XmlResponse.XML_RESPONSE_APRIL_2, res);
     }
     @Test
     void getXmlResponseRateByDateApril1Test(){
         CbrApiService service = new CbrApiService();
-        Assertions.assertEquals(XmlResponse.XML_RESPONSE_APRIL_1,
-                service.getXmlResponseRateByDate(LocalDate.of(2025, 4, 1)));
+        String res = Assertions.assertDoesNotThrow(()->service.getXmlResponseRateByDate(LocalDate.of(2025, 4, 1)));
+        Assertions.assertEquals(XmlResponse.XML_RESPONSE_APRIL_1, res);
     }
     @Test
     void getExchangeRateUSDApril5Test(){
