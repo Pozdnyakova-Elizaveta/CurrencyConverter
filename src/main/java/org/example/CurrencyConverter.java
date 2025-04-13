@@ -30,6 +30,13 @@ public class CurrencyConverter {
         return amount*rateFrom/rateTo;
     }
 
+    /**
+     * Получение истории курса валют за пять дней
+     * @param currency код валюты
+     * @param date конечная дата пятидневного периода
+     * @return массив со значениями курса за пять дней - от date-4 до date
+     * @throws Exception ошибки в работе с xml
+     */
     public double[] getHistoryRate(String currency, LocalDate date) throws Exception {
         double[] rates = new double[5];
         for (int i=0; i!=rates.length; i++)
