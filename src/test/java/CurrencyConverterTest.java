@@ -49,4 +49,13 @@ public class CurrencyConverterTest {
                 converter.getHistoryRate("KZT", LocalDate.of(2025, 4, 5)));
         Assertions.assertArrayEquals(expected, res);
     }
+    @Test
+    void currencyRatePredictionUSD5April(){
+        CurrencyConverter converter = new CurrencyConverter();
+        double[] expected = new double[]{85.4963, 84.8707, 84.5522, 84.383, 84.2774, 84.71592000000001,
+                84.559844, 84.4976728, 84.48676736, 84.507520832};
+        double[] res = Assertions.assertDoesNotThrow(()->
+                converter.currencyRatePrediction("USD", LocalDate.of(2025, 4, 5)));
+        Assertions.assertArrayEquals(expected, res);
+    }
 }
