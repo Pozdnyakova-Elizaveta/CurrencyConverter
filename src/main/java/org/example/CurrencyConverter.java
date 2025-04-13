@@ -21,16 +21,14 @@ public class CurrencyConverter {
         return amount*rateFrom/rateTo;
     }
 
-    public double[] getHistoryRate(String currency, LocalDate date) {
-        //TODO реализовать с использованием методов сервиса
-        if (currency.equals("USD") && date.equals(LocalDate.of(2025,4,5)))
-            return new double[]{85.4963, 84.8707, 84.5522, 84.383, 84.2774};
-        else if (currency.equals("KZT") && date.equals(LocalDate.of(2025,4,5)))
-            return new double[]{0.169831, 0.168247, 0.168046, 0.167743, 0.168027};
-        throw new IllegalArgumentException("getHistoryRate() works only with parameters (USD, 05.04.2025), (KZT, 05.04.2025)");
+    public double[] getHistoryRate(String currency, LocalDate date) throws Exception {
+        double[] rates = new double[5];
+        for (int i=0; i!=rates.length; i++)
+            rates[4-i] = service.getExchangeRate(currency, date.minusDays(i));
+        return rates;
     }
 
-    public double[] currencyRatePrediction(String currency, LocalDate date) {
+    public double[] currencyRatePrediction(String currency, LocalDate date) throws Exception {
         double[] rates = getHistoryRate(currency, date);
         double[] ratesPrediction = Arrays.copyOf(rates, 10);
         double sum=0;
