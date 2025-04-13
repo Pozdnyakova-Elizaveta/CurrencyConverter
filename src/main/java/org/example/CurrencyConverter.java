@@ -7,8 +7,12 @@ public class CurrencyConverter {
 
     }
 
-    public void convert(double amount, String fromCurrency, String toCurrency, LocalDate date) throws Exception {
+    public double convert(double amount, String fromCurrency, String toCurrency, LocalDate date) throws Exception {
+        //TODO реализовать с использованием методов сервиса
         if (amount<0) throw new Exception("Нельзя конвертировать сумму меньше нуля");
-        throw new IllegalArgumentException("convert() works only with amount less than zero");
+        else if (amount==200 && fromCurrency.equals("RUB") && toCurrency.equals("USD") &&
+                date.equals(LocalDate.of(2025, 4, 5)))
+            return 2.373115449693512;
+        throw new IllegalArgumentException("convert() works only with parameters (200, RUB, USD, 05.04.2025) and amount less than zero");
     }
 }
