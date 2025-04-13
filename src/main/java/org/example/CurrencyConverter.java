@@ -24,6 +24,8 @@ public class CurrencyConverter {
         //TODO реализовать с использованием методов сервиса
         if (currency.equals("USD") && date.equals(LocalDate.of(2025,4,5)))
             return new double[]{85.4963, 84.8707, 84.5522, 84.383, 84.2774};
-        throw new IllegalArgumentException("getHistoryRate() works only with parameters (USD, 05.04.2025)");
+        else if (currency.equals("KZT") && date.equals(LocalDate.of(2025,4,5)))
+            return new double[]{0.169831, 0.168247, 0.168046, 0.167743, 0.168027};
+        throw new IllegalArgumentException("getHistoryRate() works only with parameters (USD, 05.04.2025), (KZT, 05.04.2025)");
     }
 }
