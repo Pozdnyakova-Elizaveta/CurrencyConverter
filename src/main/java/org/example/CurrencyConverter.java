@@ -3,19 +3,20 @@ package org.example;
 import java.time.LocalDate;
 
 public class CurrencyConverter {
+    CbrApiService service;
     public CurrencyConverter(){
-
+        service = new CbrApiService();
     }
 
     public double convert(double amount, String fromCurrency, String toCurrency, LocalDate date) throws Exception {
-        //TODO реализовать с использованием методов сервиса
+        double rateFrom;
+        double rateTo;
         if (amount<0) throw new Exception("Нельзя конвертировать сумму меньше нуля");
-        else if (amount==200 && fromCurrency.equals("RUB") && toCurrency.equals("USD") &&
-                date.equals(LocalDate.of(2025, 4, 5)))
-            return 2.373115449693512;
-        else if (amount==300 && fromCurrency.equals("RUB") && toCurrency.equals("KZT") &&
-                date.equals(LocalDate.of(2025, 4, 3)))
-            return 1785.2254739773634;
-        throw new IllegalArgumentException("convert() works only with parameters (200, RUB, USD, 05.04.2025) and amount less than zero");
+        if (fromCurrency.equals(toCurrency)) return amount;
+        if (fromCurrency.equals("RUB")) rateFrom = 1;
+        else rateFrom = service.getExchangeRate(fromCurrency, date);
+        if (toCurrency.equals("RUB")) rateTo = 1;
+        else rateTo = service.getExchangeRate(toCurrency, date);
+        return amount*rateFrom/rateTo;
     }
 }
