@@ -33,4 +33,12 @@ public class CurrencyConverterTest {
                 converter.convert(300, "RUB", "KZT", LocalDate.of(2025, 4, 3)));
         Assertions.assertEquals(1785.2254739773634, res);
     }
+    @Test
+    void getHistoryRateUSD5April(){
+        CurrencyConverter converter = new CurrencyConverter();
+        double[] expected = new double[]{85.4963, 84.8707, 84.5522, 84.383, 84.2774};
+        double[] res = Assertions.assertDoesNotThrow(()->
+                converter.getHistoryRate("USD", LocalDate.of(2025, 4, 5)));
+        Assertions.assertArrayEquals(expected, res);
+    }
 }
