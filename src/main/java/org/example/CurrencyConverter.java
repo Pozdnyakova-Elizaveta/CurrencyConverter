@@ -9,6 +9,15 @@ public class CurrencyConverter {
         service = new CbrApiService();
     }
 
+    /**
+     * Конвертация из одной валюты в другую
+     * @param amount число-сумма
+     * @param fromCurrency текущая валюта
+     * @param toCurrency валюта для конвертации
+     * @param date дата, для которой запрашивается курс валют
+     * @return число - сумма после конвертации
+     * @throws Exception переданная сумма меньше нуля
+     */
     public double convert(double amount, String fromCurrency, String toCurrency, LocalDate date) throws Exception {
         double rateFrom;
         double rateTo;
