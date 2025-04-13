@@ -8,21 +8,32 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class CbrApiService {
+    private final String URL = "https://www.cbr.ru/scripts/XML_daily.asp?date_req=";
+    private final HttpClient httpClient;
     public CbrApiService(){
-
+        this.httpClient = HttpClient.newHttpClient();
     }
 
-    public String getXmlResponseRateByDate(LocalDate date) {
-        //TODO подключить api
-        if (date.equals(LocalDate.of(2025, 4, 5))) return XmlResponse.XML_RESPONSE_APRIL_5;
-        else if (date.equals(LocalDate.of(2025, 4, 4))) return XmlResponse.XML_RESPONSE_APRIL_4;
-        else if (date.equals(LocalDate.of(2025, 4, 3))) return XmlResponse.XML_RESPONSE_APRIL_3;
-        else if (date.equals(LocalDate.of(2025, 4, 2))) return XmlResponse.XML_RESPONSE_APRIL_2;
-        else if (date.equals(LocalDate.of(2025, 4, 1))) return XmlResponse.XML_RESPONSE_APRIL_1;
-        throw new IllegalArgumentException("getXmlResponseRateByDate() works only April 5, 4, 3, 2, 1");
+    public String getXmlResponseRateByDate(LocalDate date) throws IOException, InterruptedException {
+        String formattedDate = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(URL + formattedDate))
+                .GET()
+                .build();
+        HttpResponse<String> response = httpClient.send(
+                request,
+                HttpResponse.BodyHandlers.ofString()
+        );
+        return response.body();
     }
 
     public double getExchangeRate(String currency, LocalDate date) throws Exception {
