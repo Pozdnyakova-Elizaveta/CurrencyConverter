@@ -23,6 +23,13 @@ public class CbrApiService {
         this.httpClient = HttpClient.newHttpClient();
     }
 
+    /**
+     * Получение курса валют с помощью API
+     * @param date дата, для которой запрашивается курс валют
+     * @return строка с xml-ответом курса
+     * @throws IOException ошибка ввода-вывода при отправке запроса
+     * @throws InterruptedException поток выполнения был прерван во время ожидания ответа
+     */
     public String getXmlResponseRateByDate(LocalDate date) throws IOException, InterruptedException {
         String formattedDate = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         HttpRequest request = HttpRequest.newBuilder()
