@@ -1,5 +1,13 @@
 package org.example;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.ByteArrayInputStream;
 import java.time.LocalDate;
 
 public class CbrApiService {
@@ -18,10 +26,23 @@ public class CbrApiService {
     }
 
     public double getExchangeRate(String currency, LocalDate date) throws Exception {
-        //TODO реализовать с использованием getXmlResponseRateByDate
-        if (currency.equals("USD") && date.equals(LocalDate.of(2025, 4, 5))) return 84.2774;
-        else if (currency.equals("KZT") && date.equals(LocalDate.of(2025, 4, 3))) return 0.168046;
-        else if (currency.equals("TTT")) throw new Exception("Валюта " + currency + " не найдена");
-        throw new IllegalArgumentException("getXmlResponseRateByDate() works only with parameters (USD, 05.04.2025), (KZT, 03.04.2025)");
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        String xml = getXmlResponseRateByDate(date);
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.parse(new ByteArrayInputStream(xml.getBytes("Windows-1251")));
+        NodeList valutes = doc.getElementsByTagName("Valute");
+        for (int i = 0; i < valutes.getLength(); i++) {
+            Node valute = valutes.item(i);
+            if (valute.getNodeType() == Node.ELEMENT_NODE) {
+                Element element = (Element) valute;
+                String code = element.getElementsByTagName("CharCode").item(0).getTextContent();
+                if (currency.equals(code)) {
+                    String value = element.getElementsByTagName("Value").item(0).getTextContent();
+                    String nominal = element.getElementsByTagName("Nominal").item(0).getTextContent();
+                    return Double.parseDouble(value.replace(",", "."))/Double.parseDouble(nominal);
+                }
+            }
+        }
+        throw new Exception("Валюта " + currency + " не найдена");
     }
 }
