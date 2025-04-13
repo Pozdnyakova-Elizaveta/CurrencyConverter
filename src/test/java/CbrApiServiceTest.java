@@ -45,14 +45,16 @@ public class CbrApiServiceTest {
     @Test
     void getExchangeRateUSDApril5Test(){
         CbrApiService service = new CbrApiService();
-        Assertions.assertEquals(84.2774,
+        double res = Assertions.assertDoesNotThrow(()->
                 service.getExchangeRate("USD", LocalDate.of(2025, 4, 5)));
+        Assertions.assertEquals(84.2774, res);
     }
     @Test
     void getExchangeRateKZTApril3Test(){
         CbrApiService service = new CbrApiService();
-        Assertions.assertEquals(0.168046,
+        double res = Assertions.assertDoesNotThrow(()->
                 service.getExchangeRate("KZT", LocalDate.of(2025, 4, 3)));
+        Assertions.assertEquals(0.168046, res);
     }
     @Test
     void getExchangeRateNonExistentCurrencyTest(){
