@@ -28,4 +28,12 @@ public class CurrencyConverter {
             return new double[]{0.169831, 0.168247, 0.168046, 0.167743, 0.168027};
         throw new IllegalArgumentException("getHistoryRate() works only with parameters (USD, 05.04.2025), (KZT, 05.04.2025)");
     }
+
+    public double[] currencyRatePrediction(String currency, LocalDate date) {
+        //TODO реализовать с использованием getHistoryRate()
+        if (currency.equals("USD") && date.equals(LocalDate.of(2025, 4, 5)))
+            return new double[]{85.4963, 84.8707, 84.5522, 84.383, 84.2774, 84.71592000000001,
+                84.559844, 84.4976728, 84.48676736, 84.507520832};
+        throw new IllegalArgumentException("currencyRatePrediction() works only with parameters (USD, 05.04.2025)");
+    }
 }
