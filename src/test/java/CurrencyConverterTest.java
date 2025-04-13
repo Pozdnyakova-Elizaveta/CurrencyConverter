@@ -26,4 +26,11 @@ public class CurrencyConverterTest {
                 converter.convert(200, "RUB", "USD", LocalDate.of(2025, 4, 5)));
         Assertions.assertEquals(2.373115449693512, res);
     }
+    @Test
+    void converting300RUBToKZTTest() {
+        CurrencyConverter converter = new CurrencyConverter();
+        double res = Assertions.assertDoesNotThrow(()->
+                converter.convert(300, "RUB", "KZT", LocalDate.of(2025, 4, 3)));
+        Assertions.assertEquals(1785.2254739773634, res);
+    }
 }
