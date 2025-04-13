@@ -43,6 +43,13 @@ public class CbrApiService {
         return response.body();
     }
 
+    /**
+     * Получение текущего курса валюты относительно рубля
+     * @param currency код валюты
+     * @param date дата, для которой запрашивается курс валюты
+     * @return число, сколько рублей в 1 единице этой валюты
+     * @throws Exception возникли ошибки при парсинге xml
+     */
     public double getExchangeRate(String currency, LocalDate date) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         String xml = getXmlResponseRateByDate(date);
